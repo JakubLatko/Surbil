@@ -1,7 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "@components/Button.astro";
 ---
 
-<Layout title="Welcome to Astro." />
+<Layout title="Welcome to Astro.">
+	<a href="/login">Do loginu</a>
+</Layout>
 
-<style></style>
+<style lang="scss">
+	h1 {
+		font-size: var(--h6);
+	}
+</style>

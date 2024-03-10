@@ -4,8 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 ---
 
 <!doctype html>
@@ -24,12 +22,9 @@ import Footer from "@components/Footer.astro";
 		<title>{title} | Surbil</title>
 	</head>
 	<body>
-		<Header />
 		<slot />
-		<Footer />
 	</body>
 </html>
-
 <style is:global lang="scss">
 	@use "../scss/index.scss";
 	:root {
@@ -87,6 +82,7 @@ import Footer from "@components/Footer.astro";
 		background-image: url(../../public/bg-circle-primary-700.svg),
 			url(../../public/bg-circle-accent-600.svg);
 		background-repeat: no-repeat;
+		background-attachment: fixed;
 		background-position:
 			-100vw 40vh,
 			50vw -40vh;

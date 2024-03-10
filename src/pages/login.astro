@@ -1,0 +1,89 @@
+---
+import LoginLayout from "src/layouts/LoginLayout.astro";
+---
+
+<LoginLayout title="Login">
+	<main>
+		<div class="logo">
+			<div></div>
+			<p>
+				Surbil to portal pozwalający korzystać z dziennika
+				elektronicznego Librus Synergia w bardziej przystępny sposób.
+				Nowoczesny wygląd, płynne animacje i szybkie ładowanie treści,
+				to coś, co idealnie opisuje stronę, na której się właśnie
+				znajdujesz.
+			</p>
+		</div>
+		<form>
+			<label for="login">Login</label>
+			<input type="text" name="login" id="login" />
+			<label for="password">Hasło</label>
+			<input type="password" name="password" id="password" />
+			<button type="submit">Zaloguj się</button>
+		</form>
+	</main>
+</LoginLayout>
+
+<style lang="scss">
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		align-items: center;
+		padding-inline: 2rem;
+	}
+	.logo {
+		margin-top: 5vh;
+		div {
+			aspect-ratio: 1;
+			background-color: var(--neutral-950);
+			width: 15rem;
+			border-radius: 50%;
+		}
+		p {
+			display: none;
+		}
+	}
+
+	form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	label {
+		font-size: var(--h5);
+		&:last-of-type {
+			margin-top: 1rem;
+		}
+	}
+	input {
+		font-size: var(--h5);
+		//margin-top: 0.5rem;
+		background-color: var(--neutral-300);
+		padding: 0.5rem;
+		border: 0;
+		color: var(--neutral-950);
+		border-radius: 5px;
+	}
+	button {
+		font-size: var(--h4);
+		width: fit-content;
+		padding: 0.5rem 1.5rem;
+		background-color: var(--accent-200);
+		border: 0;
+		color: var(--primary-900);
+		margin-top: 2rem;
+		margin-inline: auto;
+		border-radius: 5px;
+	}
+	@media only screen and (min-width: 600px) {
+	}
+</style>
+
+<script is:inline>
+	const form = document.querySelector("form");
+
+	form?.addEventListener("submit", (e) => {
+		e.preventDefault();
+	});
+</script>
