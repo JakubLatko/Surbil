@@ -1,1 +1,83 @@
-footer
+---
+import Image from "astro/components/Image.astro";
+import Announcements from "../images/announcements.svg";
+import attendance from "../images/attendance.svg";
+import grades from "../images/grades.svg";
+import lessonplan from "../images/lessonplan.svg";
+import messages from "../images/messages.svg";
+import timetable from "../images/timetable.svg";
+---
+
+<footer>
+	<nav>
+		<ul>
+			<li>
+				<a href="/announcements"
+					><Image src={Announcements} alt={"Ogłoszenia"} /></a
+				>
+			</li>
+			<li>
+				<a href="/messages"
+					><Image src={messages} alt={"Wiadomości"} /></a
+				>
+			</li>
+			<li><a href="/grades"><Image src={grades} alt={"Oceny"} /></a></li>
+			<li>
+				<a href="/lessonplan"
+					><Image src={lessonplan} alt={"Plan lekcji"} /></a
+				>
+			</li>
+			<li>
+				<a href="/timetable"
+					><Image src={timetable} alt={"Terminarz"} /></a
+				>
+			</li>
+			<li>
+				<a href="/attendance"
+					><Image src={attendance} alt={"Obecność"} /></a
+				>
+			</li>
+		</ul>
+	</nav>
+</footer>
+
+<style lang="scss">
+	footer {
+		display: flex;
+		flex-direction: row;
+
+		position: fixed;
+		width: 100vw;
+		bottom: 0;
+		left: 0;
+		background-color: var(--neutral-100);
+		padding-inline: 2rem;
+		padding-block: 1rem;
+	}
+	nav {
+		width: 100%;
+		ul {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			justify-content: space-between;
+			li {
+				a {
+				}
+			}
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		footer {
+			padding-inline: 3.75rem;
+		}
+	}
+	@media only screen and (min-width: 1024px) {
+		footer {
+			display: none;
+		}
+	}
+</style>

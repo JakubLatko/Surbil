@@ -1,1 +1,150 @@
-header
+---
+import Image from "astro/components/Image.astro";
+import Burger from "../images/burger.png";
+import Announcements from "../images/announcements.svg";
+import attendance from "../images/attendance.svg";
+import grades from "../images/grades.svg";
+import lessonplan from "../images/lessonplan.svg";
+import messages from "../images/messages.svg";
+import timetable from "../images/timetable.svg";
+---
+
+<header>
+	<a href="/" class="logo"> Logo</a>
+	<button>
+		<Image alt={"Menu button"} src={Burger} />
+	</button>
+	<nav>
+		<ul>
+			<li>
+				<a href="/announcements"
+					><Image src={Announcements} alt={""} /> Ogłoszenia</a
+				>
+			</li>
+
+			<li>
+				<a href="/messages"
+					><Image src={messages} alt={""} />Wiadomości</a
+				>
+			</li>
+			<li><a href="/grades"><Image src={grades} alt={""} />Oceny</a></li>
+			<li>
+				<a href="/lessonplan"
+					><Image src={lessonplan} alt={""} />Plan lekcji</a
+				>
+			</li>
+			<li>
+				<a href="/timetable"
+					><Image src={timetable} alt={""} />Terminarz</a
+				>
+			</li>
+			<li>
+				<a href="/attendance"
+					><Image src={attendance} alt={""} />Frekwencja</a
+				>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<style lang="scss">
+	header {
+		display: flex;
+		flex-direction: row;
+		width: 100vw;
+		background-color: var(--neutral-100);
+		padding-inline: 2rem;
+		padding-block: 0.5rem;
+		justify-content: space-between;
+	}
+	.logo {
+		width: 3rem;
+		aspect-ratio: 1;
+		background-color: white;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		color: black;
+		text-decoration: none;
+	}
+	button {
+		border: 0;
+		background: transparent;
+		margin-block: auto;
+		margin-left: auto;
+	}
+	nav {
+		display: none;
+	}
+	@media only screen and (min-width: 768px) {
+		header {
+			padding-inline: 3.75rem;
+		}
+	}
+	@media only screen and (min-width: 1024px) {
+		header {
+			padding-inline: 5vw;
+		}
+		button {
+			display: none;
+		}
+		nav {
+			display: flex;
+			flex-direction: row;
+			ul {
+				display: flex;
+				flex-direction: row;
+				list-style: none;
+				//gap: 1rem;
+				padding: 0;
+				margin: 0;
+				align-items: center;
+				padding-block: 0.5rem;
+				li {
+					position: relative;
+					height: 100%;
+					border-left: 1px solid var(--neutral-950);
+					&:hover {
+						background-color: var(--neutral-200);
+						cursor: pointer;
+						transition: 500ms ease-in-out;
+					}
+					&:last-of-type {
+						border-right: 1px solid var(--neutral-950);
+					}
+					a {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						color: var(--neutral-950);
+						text-decoration: none;
+						font-size: var(--body);
+						width: 100%;
+						height: 100%;
+						padding: 0.25rem 0.5rem;
+						gap: 0.25rem;
+					}
+				}
+			}
+		}
+	}
+	@media only screen and (min-width: 1366px) {
+		nav {
+			ul {
+				li {
+					a {
+						padding: 0.25rem 1rem;
+					}
+				}
+			}
+		}
+		header {
+			padding-inline: 15vw;
+		}
+	}
+	@media only screen and (min-width: 1920px) {
+		header {
+			padding-inline: 15vw;
+		}
+	}
+</style>

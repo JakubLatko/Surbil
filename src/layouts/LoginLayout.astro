@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -20,76 +21,114 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Surbil</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot />
-	</body>
+	</body><style is:global lang="scss">
+		@use "../scss/index.scss";
+		:root {
+			--h1: 61px;
+			--h2: 49px;
+			--h3: 39px;
+			--h4: 31px;
+			--h5: 25px;
+			--h6: 20px;
+			--body: 16px;
+			--neutral-50: #0d0d0d;
+			--neutral-75: #131313;
+			--neutral-100: #1a1a1a;
+			--neutral-200: #333333;
+			--neutral-300: #4d4d4d;
+			--neutral-400: #666666;
+			--neutral-500: #808080;
+			--neutral-600: #999999;
+			--neutral-700: #b3b3b3;
+			--neutral-800: #cccccc;
+			--neutral-900: #e6e6e6;
+			--neutral-950: #f2f2f2;
+
+			--primary-200: #63032d;
+			--primary-300: #940543;
+			--primary-400: #c60659;
+			--primary-500: #f70870;
+			--primary-600: #f9398c;
+			--primary-700: #f9398c;
+
+			--accent-200: #036063;
+			--accent-300: #059094;
+			--accent-400: #06bfc6;
+			--accent-500: #08eff7;
+			--accent-600: #39f2f9;
+
+			--accent-yellow: #daa449;
+			--accent-orange: #e39154;
+			--accent-lightgreen: #5be354;
+			--accent-lightblue: #54cee3;
+			--accent-purple: #6854e3;
+			--accent-pink: #eb36aa;
+			--accent-red: #ea3d38;
+			--accent-darkgreen: #002e00;
+		}
+		html {
+			min-height: 100vh;
+		}
+		body {
+			font-size: 100%;
+			font-family: "Roboto", sans-serif;
+			background-color: var(--neutral-75);
+			color: var(--neutral-950);
+			position: relative;
+			background-image: url(/bg-circle-primary-700.svg),
+				url(/bg-circle-accent-600.svg);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position:
+				-100vw 40vh,
+				50vw -40vh;
+		}
+		h1,
+		h2,
+		h3 {
+			font-family: "Roboto Condensed", sans-serif;
+		}
+		@media only screen and (min-width: 500px) {
+			body {
+				background-size: 150%, 100%;
+				background-position:
+					-80vw 50vh,
+					50vw -20vh;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			body {
+				background-size: 120%, 70%;
+				background-position:
+					30vw 50vh,
+					-10vw -20vh;
+			}
+		}
+		@media only screen and (min-width: 1024px) {
+		}
+		@media only screen and (min-width: 1366px) {
+			body {
+				background-size: 80%, 60%;
+				background-position:
+					50vw 40vh,
+					-20vw -30vh;
+			}
+		}
+		@media only screen and (min-width: 1920px) {
+			body {
+				background-size: 80%, 70%;
+				background-position:
+					50vw 40vh,
+					-20vw -50vh;
+			}
+		}
+		@media only screen and (min-width: 2560px) {
+		}
+		@media only screen and (min-width: 3840px) {
+		}
+	</style>
 </html>
-<style is:global lang="scss">
-	@use "../scss/index.scss";
-	:root {
-		--h1: 61px;
-		--h2: 49px;
-		--h3: 39px;
-		--h4: 31px;
-		--h5: 25px;
-		--h6: 20px;
-		--body: 16px;
-		--neutral-50: #0d0d0d;
-		--neutral-75: #131313;
-		--neutral-100: #1a1a1a;
-		--neutral-200: #333333;
-		--neutral-300: #4d4d4d;
-		--neutral-400: #666666;
-		--neutral-500: #808080;
-		--neutral-600: #999999;
-		--neutral-700: #b3b3b3;
-		--neutral-800: #cccccc;
-		--neutral-900: #e6e6e6;
-		--neutral-950: #f2f2f2;
-
-		--primary-200: #63032d;
-		--primary-300: #940543;
-		--primary-400: #c60659;
-		--primary-500: #f70870;
-		--primary-600: #f9398c;
-		--primary-700: #f9398c;
-
-		--accent-200: #036063;
-		--accent-300: #059094;
-		--accent-400: #06bfc6;
-		--accent-500: #08eff7;
-		--accent-600: #39f2f9;
-
-		--accent-yellow: #daa449;
-		--accent-orange: #e39154;
-		--accent-lightgreen: #5be354;
-		--accent-lightblue: #54cee3;
-		--accent-purple: #6854e3;
-		--accent-pink: #eb36aa;
-		--accent-red: #ea3d38;
-		--accent-darkgreen: #002e00;
-	}
-	html {
-		min-height: 100vh;
-	}
-	body {
-		font-size: 100%;
-		font-family: "Roboto", sans-serif;
-		background-color: var(--neutral-75);
-		color: var(--neutral-950);
-		position: relative;
-		background-image: url(../../public/bg-circle-primary-700.svg),
-			url(../../public/bg-circle-accent-600.svg);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-position:
-			-100vw 40vh,
-			50vw -40vh;
-	}
-	h1,
-	h2,
-	h3 {
-		font-family: "Roboto Condensed", sans-serif;
-	}
-</style>

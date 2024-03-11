@@ -1,0 +1,21 @@
+[
+	{
+		"event": "grade",
+		"value": "4",
+		"subject": "Historia",
+		"category": "Sprawdzian",
+		"comment": "Starożytność i Średniowiecze"
+	},
+	{
+		"event": "message",
+		"title": "Awaria toalet",
+		"sender": "Płatek Łukasz"
+	},
+	{
+		"event": "lessonCancelled",
+		"subject": "Matematyka",
+		"date": "3 XII"
+	},
+	{},
+	{}
+]

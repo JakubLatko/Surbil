@@ -16,9 +16,9 @@ import LoginLayout from "src/layouts/LoginLayout.astro";
 		</div>
 		<form>
 			<label for="login">Login</label>
-			<input type="text" name="login" id="login" />
+			<input type="text" name="login" id="login" required />
 			<label for="password">Hasło</label>
-			<input type="password" name="password" id="password" />
+			<input type="password" name="password" id="password" required />
 			<button type="submit">Zaloguj się</button>
 		</form>
 	</main>
@@ -78,6 +78,71 @@ import LoginLayout from "src/layouts/LoginLayout.astro";
 	}
 	@media only screen and (min-width: 600px) {
 	}
+	@media only screen and (min-width: 768px) {
+		main {
+			padding-inline: 3.75rem;
+		}
+		.logo {
+			margin-top: 10vh;
+		}
+		form {
+			width: 75%;
+		}
+	}
+	@media only screen and (min-width: 1024px) {
+	}
+	@media only screen and (min-width: 1366px) {
+		body {
+			display: flex;
+		}
+		main {
+			flex-direction: row;
+			padding-inline: 15vw;
+			align-self: center;
+		}
+		.logo {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+			margin-top: 0;
+			div {
+				width: 432px;
+			}
+			width: 50%;
+			p {
+				display: block;
+				font-size: var(--h5);
+			}
+		}
+		form {
+			max-width: 35%;
+			margin-inline: auto 0;
+		}
+		button {
+			margin-inline: auto 0;
+		}
+	}
+	@media only screen and (min-width: 1920px) {
+	}
+	@media only screen and (min-width: 2560px) {
+	}
+	@media only screen and (min-width: 3840px) {
+		.logo {
+			div {
+				width: 1000px;
+			}
+			p {
+				font-size: var(--h3);
+			}
+		}
+		form {
+		}
+		input,
+		label,
+		button {
+			font-size: var(--h3);
+		}
+	}
 </style>
 
 <script is:inline>
@@ -85,5 +150,6 @@ import LoginLayout from "src/layouts/LoginLayout.astro";
 
 	form?.addEventListener("submit", (e) => {
 		e.preventDefault();
+		window.location.replace("/");
 	});
 </script>
