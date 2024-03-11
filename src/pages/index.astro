@@ -1,15 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "@components/Button.astro";
+
+import Notification from "@components/Notification.tsx";
 ---
 
 <Layout title="Home" bodyColor="orange">
 	<main>
-		<div></div>
+		<Notification client:only="react" />
+		<div>cos</div>
 	</main>
 </Layout>
 
 <style lang="scss">
+	main {
+		display: flex;
+		flex-direction: column;
+		margin-inline: 2rem;
+	}
 	h1 {
 		font-size: var(--h6);
 	}

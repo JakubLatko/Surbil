@@ -1,0 +1,23 @@
+---
+import json from "../events.json";
+// console.log(json);
+const data = JSON.stringify(json);
+const data2 = json;
+---
+
+{
+	data2.forEach((part) => {
+		<li>{part.event}</li>;
+	})
+}
+<ul>{data2[1].event}</ul>
+
+<script is:inline>
+	const ul = document.querySelector("ul");
+	let li = document.createElement("li");
+	li.innerHTML = "<p> jestem </p>";
+	ul?.append(li);
+	// json.forEach((event) => {
+	// 	li.innerHTML(event.event);
+	// });
+</script>

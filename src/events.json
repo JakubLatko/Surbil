@@ -1,21 +1,57 @@
-[
-	{
-		"event": "grade",
-		"value": "4",
-		"subject": "Historia",
-		"category": "Sprawdzian",
-		"comment": "Starożytność i Średniowiecze"
-	},
-	{
-		"event": "message",
-		"title": "Awaria toalet",
-		"sender": "Płatek Łukasz"
-	},
-	{
-		"event": "lessonCancelled",
-		"subject": "Matematyka",
-		"date": "3 XII"
-	},
-	{},
-	{}
-]
+{
+	"events": [
+		{
+			"id": "1",
+			"event": "grade",
+			"value": "4",
+			"subject": "Historia",
+			"category": "Sprawdzian",
+			"comment": "Starożytność i Średniowiecze"
+		},
+		{
+			"id": "2",
+			"event": "message",
+			"title": "Awaria toalet",
+			"sender": "Płatek Łukasz"
+		},
+		{
+			"id": "3",
+			"event": "lessonCancelled",
+			"subject": "Matematyka",
+			"date": "3 XII"
+		},
+		{
+			"id": "4",
+			"event": "attendance",
+			"subject": "J.Polski",
+			"date": "28 V"
+		},
+		{
+			"id": "5",
+			"event": "teachersAbsence",
+			"teacher": "Buchała Bogumiła",
+			"startDate": "8 IV",
+			"endDate": "10 IV"
+		},
+		{
+			"id": "6",
+			"event": "lessonChange",
+			"prevSubject": "Ekspoatacja",
+			"nextSubject": "Matematyka",
+			"date": "28 V"
+		},
+		{
+			"id": "7",
+			"event": "announcement",
+			"title": "Dzień Liczby PI",
+			"sender": "Jeleń Magdalena"
+		},
+		{
+			"id": "8",
+			"event": "timetable",
+			"subject": "EDB",
+			"category": "Kartkówka",
+			"comment": "Pierwsza pomoc"
+		}
+	]
+}
