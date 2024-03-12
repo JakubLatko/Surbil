@@ -6,16 +6,19 @@ interface ReactProps {
 	eventName: string;
 }
 
-export default function NotMessage({ title, sender, eventName }: ReactProps) {
+export default function NotAnnouncement({
+	title,
+	sender,
+	eventName,
+}: ReactProps) {
 	return (
-		<div className="notification notMessage">
-			<div className="colorMarker lightblue-marker"></div>
+		<div className="notification notAnnouncement">
+			<div className="colorMarker pink-marker"></div>
 			<img
 				className="notifImage"
-				src={"../src/images/messages.svg"}
+				src={"../src/images/announcements.svg"}
 				alt=""
 			/>
-
 			<div className="notificationText">
 				<h2 className="notificationTextTop">{title}</h2>
 				<h3 className="notificationTextBottom">{sender}</h3>

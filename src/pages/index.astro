@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Notification from "@components/Notification.tsx";
+import Notifications from "@components/Notifications";
 ---
 
 <Layout title="Home" bodyColor="orange">
 	<main>
-		<Notification client:only="react" />
-		<div>cos</div>
+		<Notifications client:only="react" />
 	</main>
 </Layout>
 
@@ -15,9 +14,20 @@ import Notification from "@components/Notification.tsx";
 	main {
 		display: flex;
 		flex-direction: column;
-		margin-inline: 2rem;
+		margin-inline: 1rem;
 	}
 	h1 {
 		font-size: var(--h6);
+	}
+
+	@media only screen and (min-width: 375px) {
+		main {
+			margin-inline: 2rem;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		main {
+			margin-inline: 3.75rem;
+		}
 	}
 </style>

@@ -51,8 +51,9 @@ import timetable from "../images/timetable.svg";
 		bottom: 0;
 		left: 0;
 		background-color: var(--neutral-100);
-		padding-inline: 2rem;
+		padding-inline: 1rem;
 		padding-block: 1rem;
+		margin-block-start: 5rem;
 	}
 	nav {
 		width: 100%;
@@ -68,6 +69,11 @@ import timetable from "../images/timetable.svg";
 				a {
 				}
 			}
+		}
+	}
+	@media only screen and (min-width: 375px) {
+		main {
+			margin-inline: 2rem;
 		}
 	}
 	@media only screen and (min-width: 768px) {

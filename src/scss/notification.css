@@ -1,4 +1,12 @@
-a {
+.notificationWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-block: 2rem;
+	padding-block: 0 2rem;
+}
+
+.notification {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
@@ -6,18 +14,147 @@ a {
 	text-decoration: none;
 	color: var(--neutral-950);
 	border-radius: 10px;
+	align-items: center;
+	/* padding-block: 0.5rem; */
+	background-repeat: no-repeat;
+	background-size: 120%;
+	background-position: -250% 10%;
+	position: relative;
+	min-height: 80px;
 }
 
 .colorMarker {
-	background-color: yellow;
+	position: absolute;
 	width: 1rem;
-	height: 100%;
-	min-height: 2rem;
+
+	padding-block: 0.5rem;
+	top: 0;
+	bottom: 0;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
 
-img {
-	max-width: 24px;
-	max-height: 24px;
+.notification .notifImage {
+	aspect-ratio: 1;
+	margin-left: 2rem;
+}
+
+.notificationText {
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid var(--neutral-950);
+	padding-inline: 0.5rem 0;
+	gap: 0.5rem;
+}
+
+.notificationTextTop {
+	font-size: var(--h6);
+	font-weight: 300;
+	color: var(--neutral-950);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	line-height: 100%;
+}
+
+.notificationTextBottom {
+	font-size: var(--body);
+	font-weight: 300;
+	color: var(--neutral-600);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	overflow: scroll;
+	/* max-height: 2.5rem; */
+	line-height: 120%;
+	line-break: strict;
+}
+
+.NotGrade {
+	font-size: var(--h2);
+	margin-left: 2rem;
+}
+.NotSmallArrow {
+	scale: 0.5;
+}
+.arrowLink {
+	margin-left: auto;
+	padding-inline: 1rem;
+}
+/* Marker Colors */
+
+.lightblue-marker {
+	background-color: var(--accent-lightblue);
+}
+
+.orange-marker {
+	background-color: var(--accent-orange);
+}
+
+.red-marker {
+	background-color: var(--accent-red);
+}
+
+.pink-marker {
+	background-color: var(--accent-pink);
+}
+.darkgreen-marker {
+	background-color: var(--accent-darkgreen);
+}
+
+.purple-marker {
+	background-color: var(--accent-purple);
+}
+.lightgreen-marker {
+	background-color: var(--accent-lightgreen);
+}
+
+.yellow-marker {
+	background-color: var(--accent-yellow);
+}
+/* BG circles */
+
+.notMessage {
+	background-image: url(../images/bg-circle-accent-lightblue.svg);
+}
+
+.notGrade {
+	background-image: url(../images/bg-circle-accent-orange.svg);
+}
+
+.notLessonCancelled {
+	background-image: url(../images/bg-circle-accent-red.svg);
+}
+
+.notTeachersAbsence {
+	background-image: url(../images/bg-circle-accent-yellow.svg);
+}
+
+.notAttendance {
+	background-image: url(../images/bg-circle-accent-purple.svg);
+}
+
+.notAnnouncement {
+	background-image: url(../images/bg-circle-accent-pink.svg);
+}
+
+.notLessonChange {
+	background-image: url(../images/bg-circle-accent-darkgreen.svg);
+}
+
+.notTimetable {
+	background-image: url(../images/bg-circle-accent-lightgreen.svg);
+}
+
+@media only screen and (min-width: 768px) {
+	.notificationWrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		gap: 1rem;
+	}
+	.notification {
+		width: calc(50% - 0.5rem);
+		min-height: 120px;
+	}
 }

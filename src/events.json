@@ -11,24 +11,29 @@
 		{
 			"id": "2",
 			"event": "message",
+			"eventName": "Wiadomość",
 			"title": "Awaria toalet",
 			"sender": "Płatek Łukasz"
 		},
 		{
 			"id": "3",
 			"event": "lessonCancelled",
+			"eventName": "Odwołane",
 			"subject": "Matematyka",
 			"date": "3 XII"
 		},
 		{
 			"id": "4",
 			"event": "attendance",
+			"eventName": "Frekwencja",
+			"type": "Zwolnienie",
 			"subject": "J.Polski",
 			"date": "28 V"
 		},
 		{
 			"id": "5",
 			"event": "teachersAbsence",
+			"eventName": "Nieobecnośc",
 			"teacher": "Buchała Bogumiła",
 			"startDate": "8 IV",
 			"endDate": "10 IV"
@@ -43,12 +48,14 @@
 		{
 			"id": "7",
 			"event": "announcement",
+			"eventName": "Ogłoszenie",
 			"title": "Dzień Liczby PI",
 			"sender": "Jeleń Magdalena"
 		},
 		{
 			"id": "8",
 			"event": "timetable",
+			"eventName": "Zastępstwo",
 			"subject": "EDB",
 			"category": "Kartkówka",
 			"comment": "Pierwsza pomoc"
