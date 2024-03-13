@@ -15,7 +15,6 @@
 	color: var(--neutral-950);
 	border-radius: 10px;
 	align-items: center;
-	/* padding-block: 0.5rem; */
 	background-repeat: no-repeat;
 	background-size: 120%;
 	background-position: -250% 10%;
@@ -64,7 +63,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	overflow: scroll;
+	overflow: hidden;
 	/* max-height: 2.5rem; */
 	line-height: 120%;
 	line-break: strict;
@@ -155,6 +154,23 @@
 	}
 	.notification {
 		width: calc(50% - 0.5rem);
+		min-height: 120px;
+		/* align-items: initial; */
+	}
+	.desktopOption {
+		display: flex;
+	}
+}
+
+@media only screen and (min-width: 1366px) {
+	.notificationWrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		gap: 1rem;
+	}
+	.notification {
+		width: calc(25% - 1rem);
 		min-height: 120px;
 	}
 }
